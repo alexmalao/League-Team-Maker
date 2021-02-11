@@ -17,7 +17,7 @@ import itertools
 TOTAL_PERM = 250000  # the amount of randomized teams for generally obtaining the best team
 TOTAL_SWAP = 250000  # the amount of swapped player checks after permutations are calculated
 
-# Global Constants - Do not update
+# Global Constants - Do not update unless you know what you are doing
 DATA_DIR = 'data/'
 DATA_MMR = 'data_mmr'
 BEST_TEAMS = 'best_teams'
@@ -46,7 +46,7 @@ for i in range(len(summoners[0])):
     column_dict[summoners[0][i]] = i
 
 
-# ensure the amount of players are divisible by 5
+# ensure the amount of players are divisible by TEAM_SIZE
 if len(summoners) % TEAM_SIZE != 1 or len(summoners) <= TEAM_SIZE:
     raise ValueError(f'There are not enough players to form teams of {TEAM_SIZE}.')
 

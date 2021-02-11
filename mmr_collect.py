@@ -59,9 +59,11 @@ for i in range(1, len(summoners)):
     mmr_dict = response.json()
 
     mmr = 0
-    # calculates highest mmr in normal/ranked, or defaults to aram mmr if avail
-    if mmr_dict.get('error'):
-        print(f'ERROR: Summoner {summoner_name}: {mmr_dict.get("error")}', flush=True)
+    # calculates highest mmr in normal/ranked
+    if mmr_dict is None:
+        raise ConnectionError(f'Request from API is not available.')
+    elif mmr_dict.get('error'):
+        print(f'WARN: Summoner {summoner_name}: {mmr_dict.get("error")}', flush=True)
         mmr = INVALID
     else:
         if mmr_dict.get('ranked', {}).get('avg'):
