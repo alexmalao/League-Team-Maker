@@ -28,6 +28,7 @@ COL_MMR = 'Best MMR'
 HEADERS = {'User-Agent': 'python-requests:neu.league-team-maker:v1.0.0'}
 MMR_API = f'https://{REGION}.whatismymmr.com/api/v1/summoner?name='
 
+print('change from main')
 
 print("Reading in from data/data.csv.")
 # read in the data from data
