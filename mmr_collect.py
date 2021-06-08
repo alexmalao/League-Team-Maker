@@ -31,6 +31,12 @@ MMR_API = f'https://{REGION}.whatismymmr.com/api/v1/summoner?name='
 print('change from main')
 
 print("Reading in from data/data.csv.")
+
+
+print('debug message')
+print('adding extra lines and changes')
+
+
 # read in the data from data
 summoners = np.genfromtxt(f'{DATA_DIR}{DATA}.csv', delimiter=',', dtype=str)
 if len(summoners) < 1:

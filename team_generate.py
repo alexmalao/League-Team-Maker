@@ -14,7 +14,7 @@ import random
 import itertools
 
 # Global Constants - Update as necessary
-TOTAL_PERM = 250000  # the amount of randomized teams for generally obtaining the best team
+TOTAL_PERM = 1000000  # the amount of randomized teams for generally obtaining the best team
 TOTAL_SWAP = 250000  # the amount of swapped player checks after permutations are calculated
 
 # Global Constants - Do not update unless you know what you are doing
@@ -90,27 +90,27 @@ for x in range(TOTAL_PERM):
 
 # step 2: try random player swapping and save the best changes
 # also calculates using least squared error
-print(f'Trying {TOTAL_SWAP} player swaps...', flush=True)
-for x in range(TOTAL_SWAP):
-    # randomly swap two elements in the list
-    rand_team = copy.deepcopy(best_order)
-    i1, i2 = random.sample(range(len(rand_team)), 2)
-    rand_team[i1], rand_team[i2] = rand_team[i2], rand_team[i1]
-
-    # keep track of the team
-    squared_avg = 0
-    team_mmr = 0
-    for i in range(total_players):
-        team_mmr += int(summoners[rand_team[i]][column_dict[COL_MMR]])
-        if i % TEAM_SIZE == TEAM_SIZE - 1:
-            squared_avg += (int(team_mmr / 5) - avg_mmr) ** 2
-            team_mmr = 0
-
-    # replace with the best teams
-    if squared_avg < best_sq_avg:
-        best_sq_avg = squared_avg
-        best_order = rand_team
-        print(f'A new team set has been formed with squared average: {best_sq_avg}', flush=True)
+# print(f'Trying {TOTAL_SWAP} player swaps...', flush=True)
+# for x in range(TOTAL_SWAP):
+#     # randomly swap two elements in the list
+#     rand_team = copy.deepcopy(best_order)
+#     i1, i2 = random.sample(range(len(rand_team)), 2)
+#     rand_team[i1], rand_team[i2] = rand_team[i2], rand_team[i1]
+#
+#     # keep track of the team
+#     squared_avg = 0
+#     team_mmr = 0
+#     for i in range(total_players):
+#         team_mmr += int(summoners[rand_team[i]][column_dict[COL_MMR]])
+#         if i % TEAM_SIZE == TEAM_SIZE - 1:
+#             squared_avg += (int(team_mmr / 5) - avg_mmr) ** 2
+#             team_mmr = 0
+#
+#     # replace with the best teams
+#     if squared_avg < best_sq_avg:
+#         best_sq_avg = squared_avg
+#         best_order = rand_team
+#         print(f'A new team set has been formed with squared average: {best_sq_avg}', flush=True)
 
 
 # step 3: add the team numbers, average mmr for their team
