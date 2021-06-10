@@ -31,6 +31,8 @@ ROLE_LIST = ['top', 'jungle', 'middle', 'bottom', 'support', 'jungle2', 'middle2
 TEAM_SIZE = 5
 ROLE_PREF_MAX = 5
 
+# random comment that is needed for team size 7 to work
+
 
 # read in data from data_mmr
 summoners = np.genfromtxt(f'{DATA_DIR}{DATA_MMR}.csv', delimiter=',', dtype=str)
