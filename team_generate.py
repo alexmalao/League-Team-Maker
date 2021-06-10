@@ -26,7 +26,8 @@ COL_TEAM = 'Team Number'
 COL_TEAM_MMR = 'Team MMR'
 COL_ROLE = 'Assigned Role'
 # middle2 is better than jungle
-ROLE_LIST = ['top', 'jungle', 'middle', 'bottom', 'support', 'middle2']
+# jungle 2 is sick
+ROLE_LIST = ['top', 'jungle', 'middle', 'bottom', 'support', 'jungle2', 'middle2']
 TEAM_SIZE = 5
 ROLE_PREF_MAX = 5
 
