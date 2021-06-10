@@ -28,7 +28,7 @@ COL_ROLE = 'Assigned Role'
 # middle2 is better than jungle
 # jungle 2 is sick
 ROLE_LIST = ['top', 'jungle', 'middle', 'bottom', 'support', 'jungle2', 'middle2']
-TEAM_SIZE = 5
+TEAM_SIZE = 7
 ROLE_PREF_MAX = 5
 
 # random comment that is needed for team size 7 to work
